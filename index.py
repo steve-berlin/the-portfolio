@@ -1,16 +1,19 @@
 import http.server
 import socketserver
+import urllib.request
 
-PORT = 8000
-
-
-class CustomHandler(http.server.SimpleHTTPRequestHandler):
-    def do_GET(self):
-        if self.path == "/":
-            self.path = "index.html"
-        return http.server.SimpleHTTPRequestHandler.do_GET(self)
+PORT = 80
 
 
-with socketserver.TCPServer(("", PORT), CustomHandler) as httpd:
-    print(f"Serving at port {PORT}")
+def get_public_ip():
+    try:
+        return urllib.request.urlopen("https://api.ipify.org", timeout=5).read().decode()
+    except Exception:
+        return "unavailable"
+
+
+with socketserver.TCPServer(("", PORT), http.server.SimpleHTTPRequestHandler) as httpd:
+    ip = get_public_ip()
+    print(f"Public IP: {ip}")
+    print(f"Serving at http://{ip}:{PORT}")
     httpd.serve_forever()
