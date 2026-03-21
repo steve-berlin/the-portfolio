@@ -165,14 +165,18 @@
     }
 
     .project-card {
+      display: block;
       background: var(--surface);
       border: 1px solid var(--border);
       padding: 1.25rem;
       border-radius: 2px;
+      color: inherit;
+      text-decoration: none;
     }
 
     .project-card:hover {
       border-color: var(--accent-dim);
+      text-decoration: none;
     }
 
     .project-name {
@@ -343,21 +347,49 @@
       <div class="section-header">Projects</div>
       <div class="projects-grid">
 
-        <div class="project-card">
-          <div class="project-name">Coming soon</div>
-          <div class="project-desc">Project details will appear here.</div>
+        <a class="project-card" href="https://github.com/steve-berlin/steves-filehosting">
+          <div class="project-name">steves-filehosting</div>
+          <div class="project-desc">Self-hosted file hosting service.</div>
           <div class="project-tags">
-            <span class="project-tag">TBD</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Hosting</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <div class="project-name">Coming soon</div>
-          <div class="project-desc">Project details will appear here.</div>
+        <a class="project-card" href="https://github.com/steve-berlin/r4_badUSB">
+          <div class="project-name">r4_badUSB</div>
+          <div class="project-desc">Rubber Ducky BadUSB payloads.</div>
           <div class="project-tags">
-            <span class="project-tag">TBD</span>
+            <span class="project-tag">Security</span>
+            <span class="project-tag">BadUSB</span>
           </div>
-        </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/steve-berlin/clock-2.0">
+          <div class="project-name">clock-2.0</div>
+          <div class="project-desc">Clock application, version 2.</div>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/steve-berlin/pyweb-vanilla">
+          <div class="project-name">pyweb-vanilla</div>
+          <div class="project-desc">Vanilla Python web framework.</div>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Web</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/steve-berlin/cli_toolkit">
+          <div class="project-name">cli_toolkit</div>
+          <div class="project-desc">Command-line utility toolkit.</div>
+          <div class="project-tags">
+            <span class="project-tag">CLI</span>
+            <span class="project-tag">Tools</span>
+          </div>
+        </a>
 
       </div>
     </section>
